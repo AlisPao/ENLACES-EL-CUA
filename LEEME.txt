@@ -1,0 +1,23 @@
+ENLACES EL CUA - PASOS PARA CREAR LA APK
+
+PARTE 1: SUBIR A GITHUB PAGES
+1. Entra a github.com con tu cuenta (keniergt) y toca "New repository".
+2. Nombre: EnlacesElCua   |   Public   |   Create repository.
+3. Toca "uploading an existing file" y arrastra TODO el contenido de esta carpeta:
+   index.html, manifest.json, sw.js y la carpeta icons (con sus 3 imagenes).
+4. Toca "Commit changes".
+5. Ve a Settings > Pages > Source: "Deploy from a branch" > Branch: main / (root) > Save.
+6. Espera 1 a 2 minutos. Tu app quedara en:
+   https://keniergt.github.io/EnlacesElCua/
+
+PARTE 2: CREAR LA APK
+1. Abre https://www.pwabuilder.com
+2. Pega https://keniergt.github.io/EnlacesElCua/ y toca "Start".
+3. Toca "Package for stores" > "Android" > "Generate package".
+4. En las opciones deja los valores por defecto (Package ID: algo como io.github.keniergt.enlaces).
+5. Descarga el .zip, extrae y busca el archivo .apk
+   (usa el que dice "signed" o el "app-release-signed.apk").
+6. Pasalo al celular (WhatsApp, cable o Drive) y abrelo para instalar.
+   Si Android lo pide, activa "Instalar apps de origen desconocido".
+
+NOTA: si cambias los enlaces en el codigo, sube de nuevo index.html a GitHub y la app se actualiza sola.

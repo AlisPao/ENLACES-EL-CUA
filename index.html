@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f3b3f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Enlaces El Cuá</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<style>
+:root{--bg:#eef3f0;--card:#fff;--ink:#12292b;--mute:#62777a;--line:#dbe5e1;--brand:#0f3b3f;--accent:#ffd60a;--shadow:0 1px 2px rgba(15,59,63,.06),0 6px 16px rgba(15,59,63,.07);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1819;--card:#162527;--ink:#eaf2f0;--mute:#9db3b1;--line:#263a3c;--brand:#082326;--shadow:0 1px 2px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0c1819;--card:#162527;--ink:#eaf2f0;--mute:#9db3b1;--line:#263a3c;--brand:#082326;--shadow:0 1px 2px rgba(0,0,0,.4)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+header{background:var(--brand);color:#fff;padding:20px 18px 26px;border-radius:0 0 28px 28px;position:relative}
+.top{display:flex;align-items:center;gap:16px}
+.logo{position:relative;width:60px;height:60px;border-radius:20px;background:var(--accent);display:grid;place-items:center;font-size:34px;flex:none;transform:rotate(-6deg);box-shadow:0 5px 0 rgba(0,0,0,.28),0 10px 20px rgba(0,0,0,.25)}.logo em{position:absolute;right:-8px;bottom:-8px;width:26px;height:26px;border-radius:50%;background:#fff;font-style:normal;font-size:14px;display:grid;place-items:center;transform:rotate(6deg);box-shadow:0 2px 6px rgba(0,0,0,.3)}header{overflow:hidden}header::before{content:"";position:absolute;right:-40px;top:-50px;width:170px;height:170px;border-radius:50%;background:rgba(255,214,10,.12)}header::after{content:"";position:absolute;right:50px;bottom:-60px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.06)}header>*{position:relative;z-index:1}
+h1{margin:0;font-size:25px;font-weight:800;letter-spacing:-.3px;line-height:1.1}
+.sub{font-size:13px;color:#a9c7c3;margin-top:3px}
+.ed{margin-left:auto;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:12px;padding:9px 13px;font:inherit;font-size:14px;font-weight:600}
+.ed.on{background:var(--accent);color:#1b1b00}
+.sw{margin-top:18px;position:relative}
+.sw span{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.5}
+.search{width:100%;padding:13px 14px 13px 40px;border-radius:14px;border:0;font:inherit;background:#fff;color:#12292b;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+main{max-width:680px;margin:0 auto;padding:6px 14px 110px}
+.gh{display:flex;align-items:center;gap:9px;margin:24px 4px 10px;font-weight:800;font-size:16px}
+.gh i{width:10px;height:22px;border-radius:5px;background:var(--c)}
+.gh small{margin-left:auto;font-weight:600;color:var(--mute);font-size:12px}
+.item{display:flex;background:var(--card);border-radius:18px;margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.go{flex:1;display:flex;gap:14px;align-items:center;padding:13px 12px 13px 13px;text-decoration:none;color:inherit;min-width:0}
+.go:active{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.ico{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:color-mix(in srgb,var(--c) 16%,var(--card))}
+.tx{min-width:0;flex:1}
+.t{font-weight:700;line-height:1.22}
+.u{font-size:12px;color:var(--mute);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{color:var(--mute);font-size:22px;padding-left:2px}
+.side{display:flex;flex-direction:column;border-left:1px solid var(--line);width:72px}
+.side button{flex:1;border:0;background:none;color:var(--ink);font:inherit;font-size:13px;font-weight:600}
+.side button+button{border-top:1px solid var(--line)}
+.side .del{color:#d64545}
+.empty{text-align:center;color:var(--mute);padding:44px 10px}
+.empty b{display:block;font-size:34px;margin-bottom:6px}
+.hint{font-size:13px;color:var(--mute);margin:26px 6px;line-height:1.55;text-align:center}
+.fab{position:fixed;right:18px;bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;background:var(--accent);color:#1b1b00;border:0;border-radius:30px;padding:15px 20px;font:inherit;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.fab b{font-size:22px;line-height:1}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--brand);color:#fff;padding:10px 18px;border-radius:22px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;white-space:nowrap}
+.toast.on{opacity:1}
+dialog{border:0;border-radius:22px;padding:20px;width:min(92vw,430px);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog h3{margin:0 0 4px;font-size:19px}
+dialog label{display:block;font-size:13px;font-weight:600;color:var(--mute);margin:14px 0 5px}
+dialog input,dialog select{width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--line);font:inherit;background:var(--bg);color:var(--ink)}
+dialog input:focus,dialog select:focus{outline:2px solid var(--brand);border-color:transparent}
+.emo{display:flex;flex-wrap:wrap;gap:6px;max-height:200px;overflow-y:auto}
+.emo button{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);font-size:21px}
+.emo button.on{border-color:var(--brand);background:color-mix(in srgb,var(--accent) 45%,var(--card))}
+.row{display:flex;gap:10px;margin-top:20px}
+.row button{flex:1;font:inherit;font-weight:700;padding:13px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.row .p{background:var(--brand);color:#fff;border-color:var(--brand)}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="logo">🏫<em>🔗</em></div>
+    <div><h1>Enlaces El Cuá</h1><div class="sub">Todo a un toque</div></div>
+    <button class="ed" id="mode">Editar</button>
+  </div>
+  <div class="sw"><span>🔎</span><input class="search" id="q" type="search" placeholder="Buscar enlace…" autocomplete="off"></div>
+</header>
+<main id="list"></main>
+<button class="fab" id="add"><b>+</b> Agregar enlace</button>
+<div class="toast" id="toast"></div>
+
+<dialog id="dlg">
+  <h3 id="dt">Nuevo enlace</h3>
+  <label>Nombre</label><input id="f-name" placeholder="Ej. Dashboard de asistencia">
+  <label>Enlace (URL)</label><input id="f-url" type="url" inputmode="url" placeholder="https://…">
+  <label>Grupo</label><select id="f-grp"></select>
+  <input id="f-newgrp" placeholder="Nombre del nuevo grupo" style="display:none;margin-top:8px">
+  <label>Ícono</label><div class="emo" id="emo"></div>
+  <div class="row"><button id="cancel">Cancelar</button><button class="p" id="save">Guardar</button></div>
+</dialog>
+
+<script>
+const COLORS=["#1e9e63","#2f6fe4","#e8590c","#8e44ad","#d6336c","#0c8599","#b08900"];
+const EMOJIS=["🏫","🔗","📁","📂","🗂️","📌","📎","📞","✅","❗","🔔","🧮","✏️","📖","🧑‍🎓","👥","🏆","💡","🗓️","⏰","📥","📤","🔒","⚙️","🌟","🧑‍💼","🏠","💻","📱","🔍","📊","📋","📝","🌐","📅","📈","🧾","🖨️","🎓","👩‍🏫","📚","⭐"];
+const DEFAULTS={groups:["Asistencia diaria","Cortes evaluativos","Retiros y reprobados"],items:[
+{name:"Dashboard de asistencia y resultados diarios",url:"https://keniergt.github.io/AsistenciaDiariaElCua/dashboard_asistencia.html",grp:"Asistencia diaria",ico:"📊"},
+{name:"Ingresar asistencia diaria (directores)",url:"https://keniergt.github.io/AsistenciaDiariaElCua/",grp:"Asistencia diaria",ico:"📝"},
+{name:"Google Sheets asistencia diaria (reportes y automatizador)",url:"https://docs.google.com/spreadsheets/d/1IHpirnu_npWqXzRmR3ZIbAUczU6B689CZmc9DXOQkdQ/edit?gid=313386371#gid=313386371",grp:"Asistencia diaria",ico:"📋"},
+{name:"Dashboard de cortes evaluativos",url:"https://keniergt.github.io/CortesEvaluativosElCua/",grp:"Cortes evaluativos",ico:"📈"},
+{name:"Ingresar retiros y reprobados (directores)",url:"https://keniergt.github.io/GESTION-ESCOLAR---EL-CUA/",grp:"Retiros y reprobados",ico:"📝"},
+{name:"Google Sheets retiros y reprobados (reportes para imprimir)",url:"https://docs.google.com/spreadsheets/d/1SJYU-hnwY_9I_o_QnJ3XmBH-rqpOHqF79tjByHu0VXU/edit?gid=0#gid=0",grp:"Retiros y reprobados",ico:"🖨️"}
+]};
+const KEY="enlaces_el_cua_v2";
+let data;
+try{const s=localStorage.getItem(KEY);data=s?JSON.parse(s):JSON.parse(JSON.stringify(DEFAULTS))}catch(e){data=JSON.parse(JSON.stringify(DEFAULTS))}
+const NEW3={groups:["Calificaciones","Estadística y matrícula"],items:[
+{name:"Registro de calificaciones",url:"https://keniergt.github.io/GESTION-ESCOLAR---EL-CUA/REGISTRO_NOTAS.html",grp:"Calificaciones",ico:"📝"},
+{name:"Notas SINFO",url:"https://minedni-my.sharepoint.com/:x:/r/personal/est_elcua_mined_edu_ni/_layouts/15/Doc.aspx?sourcedoc=%7BC1A46D83-2C22-49B1-B4F9-602DA3099B32%7D&file=NOTAS%20SINFO.xlsx&action=default&mobileredirect=true&share=cQqDbaTBIiyxSbT5YC2jCZsyEgUC5rGg-eqPwMCtIZmc83WEWQ&wdOrigin=OUTLOOK-METAOS.FILEBROWSER",grp:"Calificaciones",ico:"📊"},
+{name:"Monitoreo de matrícula",url:"https://script.google.com/macros/s/AKfycbyBi5Ki7ojWJfgurHM4MIZ0Yu3u147z96xjbjnwtgCYy6qYj4SKyF0R7MEFgDLmLRSGmA/exec",grp:"Estadística y matrícula",ico:"🎓"},
+{name:"Base de datos de códigos a nivel municipal",url:"https://minedni-my.sharepoint.com/:x:/r/personal/est_elcua_mined_edu_ni/_layouts/15/Doc.aspx?sourcedoc=%7BF0E9282E-69CE-4D89-844A-E59DB8ADC4F7%7D&file=CODIGOS%20EL%20CUA%20ACTUALIZADO.xlsx&action=default&mobileredirect=true&share=cQouKOnwzmmJTYRK5Z24rcT3EgUC4D6h43p0mrlwyCnYTFl5Fg&wdOrigin=OUTLOOK-METAOS.FILEBROWSER",grp:"Estadística y matrícula",ico:"🧾"},
+{name:"Estadística 2025",url:"https://minedni-my.sharepoint.com/:x:/r/personal/est_elcua_mined_edu_ni/_layouts/15/Doc.aspx?sourcedoc=%7BCD47DB94-E090-43E0-900C-198BBC98B9EC%7D&file=ESTADISTICAS%202025.xlsx&action=default&mobileredirect=true&share=cQqU20fNkODgQ5AMGYu8mLnsEgUCSn7W5eybuxCz9Fe45VqLZA&wdOrigin=OUTLOOK-METAOS.FILEBROWSER",grp:"Estadística y matrícula",ico:"📈"},
+{name:"Estadística 2026",url:"https://minedni-my.sharepoint.com/:x:/g/personal/est_elcua_mined_edu_ni/IQBCP-6jhIkeRIJMiEWn5xorAbxkR6ZhaXYVbYJ_yxdm3yI",grp:"Estadística y matrícula",ico:"📈"},
+{name:"Estadística 2027",url:"https://minedni-my.sharepoint.com/:x:/g/personal/est_elcua_mined_edu_ni/cQr3bXeKzOh-RKMZyv0xcp8mEgUCIzQQ2n7WgPN7lQqwg254tQ",grp:"Estadística y matrícula",ico:"📈"}
+]};
+if((data.v||0)<3){NEW3.groups.forEach(g=>{if(!data.groups.includes(g))data.groups.push(g)});NEW3.items.forEach(it=>{if(!data.items.some(x=>x.url===it.url))data.items.push(it)});data.v=3;try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
+let edit=false,editing=-1,ico="🌐";
+const $=id=>document.getElementById(id);
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}};
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1700)}
+function host(u){try{const x=new URL(u);return x.hostname.replace("www.","")+x.pathname.replace(/\/$/,"")}catch(e){return u}}
+function render(){
+  const q=$("q").value.trim().toLowerCase(),list=$("list");list.textContent="";
+  let shown=0;
+  data.groups.forEach((g,gi)=>{
+    const rows=data.items.map((it,i)=>({it,i})).filter(r=>r.it.grp===g&&(!q||(r.it.name+" "+r.it.url).toLowerCase().includes(q)));
+    if(!rows.length)return;
+    const c=COLORS[gi%COLORS.length];
+    const h=document.createElement("div");h.className="gh";h.style.setProperty("--c",c);
+    const bar=document.createElement("i"),nm=document.createElement("span"),n=document.createElement("small");
+    nm.textContent=g;n.textContent=rows.length+(rows.length===1?" enlace":" enlaces");
+    h.append(bar,nm,n);list.appendChild(h);
+    rows.forEach(({it,i})=>{
+      shown++;
+      const d=document.createElement("div");d.className="item";d.style.setProperty("--c",c);
+      const a=document.createElement("a");a.className="go";a.href=it.url;a.target="_blank";a.rel="noopener";
+      const ic=document.createElement("div");ic.className="ico";ic.textContent=it.ico||"🌐";
+      const tx=document.createElement("div");tx.className="tx";
+      const t=document.createElement("div");t.className="t";t.textContent=it.name;
+      const u=document.createElement("div");u.className="u";u.textContent=host(it.url);
+      tx.append(t,u);a.append(ic,tx);
+      if(!edit){const ch=document.createElement("div");ch.className="chev";ch.textContent="›";a.appendChild(ch)}
+      d.appendChild(a);
+      if(edit){
+        const s=document.createElement("div");s.className="side";
+        const e=document.createElement("button");e.textContent="Editar";e.onclick=()=>openDlg(i);
+        const x=document.createElement("button");x.className="del";x.textContent="Borrar";
+        x.onclick=()=>{if(confirm("¿Borrar este enlace?")){data.items.splice(i,1);persist();render()}};
+        s.append(e,x);d.appendChild(s);
+      }
+      list.appendChild(d);
+    });
+  });
+  if(!shown){const e=document.createElement("div");e.className="empty";
+    e.innerHTML="<b></b>";e.firstChild.textContent=q?"🔎":"🔗";
+    e.append(q?"No hay enlaces que coincidan.":"Aún no hay enlaces. Toca “Agregar enlace”.");list.appendChild(e)}
+  const hint=document.createElement("div");hint.className="hint";
+  hint.textContent="Tip: en el menú del navegador elige “Agregar a pantalla de inicio” para usarla como app.";
+  list.appendChild(hint);
+}
+function fillGroups(sel){
+  const s=$("f-grp");s.textContent="";
+  data.groups.forEach(g=>{const o=document.createElement("option");o.value=g;o.textContent=g;s.appendChild(o)});
+  const o=document.createElement("option");o.value="__new";o.textContent="+ Crear grupo nuevo…";s.appendChild(o);
+  s.value=sel;$("f-newgrp").style.display="none";
+}
+function drawEmo(){
+  const w=$("emo");w.textContent="";
+  EMOJIS.forEach(e=>{const b=document.createElement("button");b.type="button";b.textContent=e;
+    if(e===ico)b.className="on";b.onclick=()=>{ico=e;drawEmo()};w.appendChild(b)});
+}
+function openDlg(i){
+  editing=i;const it=i>=0?data.items[i]:{name:"",url:"",grp:data.groups[0],ico:"🌐"};
+  $("dt").textContent=i>=0?"Editar enlace":"Nuevo enlace";
+  $("f-name").value=it.name;$("f-url").value=it.url;$("f-newgrp").value="";
+  ico=it.ico||"🌐";fillGroups(it.grp);drawEmo();$("dlg").showModal();
+}
+$("f-grp").onchange=()=>{const n=$("f-grp").value==="__new";$("f-newgrp").style.display=n?"block":"none";if(n)$("f-newgrp").focus()};
+$("add").onclick=()=>openDlg(-1);
+$("cancel").onclick=()=>$("dlg").close();
+$("save").onclick=()=>{
+  const name=$("f-name").value.trim();let url=$("f-url").value.trim();
+  if(!name||!url){toast("Escribe nombre y enlace");return}
+  if(!/^https?:\/\//i.test(url))url="https://"+url;
+  let grp=$("f-grp").value;
+  if(grp==="__new"){grp=$("f-newgrp").value.trim();if(!grp){toast("Escribe el nombre del grupo");return}
+    if(!data.groups.includes(grp))data.groups.push(grp)}
+  const rec={name,url,grp,ico};
+  if(editing>=0)data.items[editing]=rec;else data.items.push(rec);
+  persist();$("dlg").close();render();toast("Guardado ✓");
+};
+$("mode").onclick=()=>{edit=!edit;$("mode").textContent=edit?"Listo":"Editar";$("mode").classList.toggle("on",edit);render()};
+$("q").oninput=render;
+render();
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
+</script>
+</body>
+</html>
